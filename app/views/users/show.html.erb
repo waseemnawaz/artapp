@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Your id is:</strong>
+  <%= @user.id %>
+  <strong>Use it whenever you create a new maker or project.</strong>
+</p>
+
+<%#= @user.makers %>
+
+<% @user_makers.each do |maker| %>
+<p><%= link_to image_tag(maker.image_url, height:'500',width:'400', class: "img-responsive"), maker_path(maker) %></p>
+	<p><%= link_to 'Edit', edit_maker_path(maker) %></p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> |
+<%= link_to 'New Maker', new_maker_path %>

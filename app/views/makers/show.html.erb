@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @maker.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @maker.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag(@maker.image_url, class: "img-zoom img-responsive bigshowpic") %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @maker.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_maker_path(@maker) %> |
+<%= link_to 'Back', makers_path %>
